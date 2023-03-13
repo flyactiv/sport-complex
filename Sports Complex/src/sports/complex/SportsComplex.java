@@ -17,9 +17,13 @@ public class SportsComplex extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-
+        stage = primaryStage;
+        setStage("/sports/complex/login/login.fxml", false);
     }
 
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
         launch(args);
     }
@@ -32,6 +36,9 @@ public class SportsComplex extends Application {
             Scene scene = new Scene(root);
             stage.setScene(scene);
 
+            stage.getIcons().add(new Image(("/Images/icon.png")));
+            stage.setTitle("Sports Complex");
+            stage.setResizable(resize);
             stage.show();
 
         } catch (IOException ex) {
