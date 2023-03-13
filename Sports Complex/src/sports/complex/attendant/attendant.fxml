@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="902.0" stylesheets="@../../../utilities/main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sports.complex.attendant.AttendantController">
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0" spacing="50.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXComboBox fx:id="filterBy" onMouseClicked="#filterByDept" prefHeight="37.0" prefWidth="251.0" promptText="Сортировать по" />
+                  <JFXTextField fx:id="search" prefHeight="37.0" prefWidth="216.0" promptText="Поиск по идентификатору" />
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="idCol" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="nameCol" prefWidth="315.99998474121094" text="Имя" />
+                  <TableColumn fx:id="deptCol" prefWidth="273.0" text="Отделение" />
+                  <TableColumn fx:id="attendanceCol" prefWidth="219.0" text="Посещение" />
+              </columns>
+            </TableView>
+         </center>
+      </BorderPane>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" text="Настройки">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#menuChangePassword" text="Изменить пароль" />
+                  <MenuItem mnemonicParsing="false" onAction="#menuEditProfile" text="Редактировать профиль" />
+                  <MenuItem mnemonicParsing="false" onAction="#menuLogout" text="Разлогиниться" />
+                  <MenuItem mnemonicParsing="false" onAction="#menuExit" text="Выход" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Отчет">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#menuComplaint" text="Жалоба" />
+                  <MenuItem mnemonicParsing="false" onAction="#menusuggestion" text="Предположение" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Вид">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#menuComplaint" text="Уведомление" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Помощь">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="О нас" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
